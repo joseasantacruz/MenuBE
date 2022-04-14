@@ -8,12 +8,32 @@ This is just a development envrioment for BairesDev Menu Management Backend proj
 ### Instructions and Requirements
 https://drive.google.com/file/d/1YMQ4EmSPG0F5C02RQCmii5AblgWNk4Aw/view
 
-
-### Assumptions
-1.  
-
 ### API Enpoints
 
+- Restaurants 
+  - GET    /restaurants
+  - POST   /restaurants
+- Restaurant 
+  - GET    /restaurants/:id
+  - PATCH  /restaurants/:id
+  - PUT    /restaurants/:id
+  - DELETE /restaurants/:id
+- Menus 
+  - GET    /menus
+  - POST   /menus
+- Menu 
+  - GET    /menus/:id 
+  - PATCH  /menus/:id 
+  - PUT    /menus/:id
+  - DELETE /menus/:id
+- Menu_items 
+  - GET    /menu_items
+  - POST   /menu_items
+- Menu_item 
+  - GET    /menu_items/:id
+  - PATCH  /menu_items/:id
+  - PUT    /menu_items/:id
+  - DELETE /menu_items/:id
 
 ### Install
 - RVM

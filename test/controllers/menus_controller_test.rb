@@ -3,6 +3,7 @@ require "test_helper"
 class MenusControllerTest < ActionDispatch::IntegrationTest
   setup do
     @menu = menus(:one)
+    @restaurant = restaurants(:one)
   end
 
   test "should get index" do
@@ -12,7 +13,7 @@ class MenusControllerTest < ActionDispatch::IntegrationTest
 
   test "should create menu" do
     assert_difference("Menu.count") do
-      post menus_url, params: { menu: { description: @menu.description, name: @menu.name } }, as: :json
+      post menus_url, params: { menu: { description: @menu.description, name: @menu.name, restaurant_id: @restaurant.id } }, as: :json
     end
 
     assert_response :created
@@ -24,7 +25,7 @@ class MenusControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update menu" do
-    patch menu_url(@menu), params: { menu: { description: @menu.description, name: @menu.name } }, as: :json
+    patch menu_url(@menu), params: { menu: { description: @menu.description, name: @menu.name, restaurant_id: @restaurant.id } }, as: :json
     assert_response :success
   end
 

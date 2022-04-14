@@ -13,7 +13,7 @@ class MenuItemsControllerTest < ActionDispatch::IntegrationTest
 
   test "should create menu_item" do
     assert_difference("MenuItem.count") do
-      post menu_items_url, params: { menu_item: { description: @menu_item.description, name: @menu_item.name, price: @menu_item.price, menu_id: @menu.id } }, as: :json
+      post menu_items_url, params: { menu_item: { description: @menu_item.description, name: @menu_item.name+'1', price: @menu_item.price, menu_id: @menu.id } }, as: :json
     end
 
     assert_response :created
