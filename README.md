@@ -8,6 +8,12 @@ This is just a development envrioment for BairesDev Menu Management Backend proj
 ### Instructions and Requirements
 https://drive.google.com/file/d/1YMQ4EmSPG0F5C02RQCmii5AblgWNk4Aw/view
 
+
+### Assumptions
+1. The fields of each class were based on the Front-End test.
+2. Basic endpoints are created for the CRUD (Create, Read, Update, Delete) of each class.
+3. The json of the restaurant_data.json file is included in the potman collection that is added to the repository, in order to test its operation.
+
 ### API Enpoints
 
 - Restaurants 

@@ -15,12 +15,50 @@ class RestaurantsController < ApplicationController
 
   # POST /restaurants
   def create
-    @restaurant = Restaurant.new(restaurant_params)
+    @json =  []
+    if restaurant_params[:restaurants]
+      restaurant_params[:restaurants].each do |rest|
+        @restaurant = Restaurant.new(name: rest[:name])
 
-    if @restaurant.save
-      render json: @restaurant, status: :created, location: @restaurant
-    else
-      render json: @restaurant.errors, status: :unprocessable_entity
+        if @restaurant.save
+          @json << @restaurant
+          if rest[:menus]
+            rest[:menus].each do |menus|
+              menu = Menu.new(name: menus[:name], restaurant_id: @restaurant.id)
+              if menu.save
+                @json << menu
+                if menus[:menu_items]
+                  menus[:menu_items].each do |menu_items|
+                    menu_item = MenuItem.new(name: menu_items[:name], price: menu_items[:price], menu_id: menu.id)
+                    if menu_item.save
+                      @json << menu_item
+                    else
+                      @json << menu_item.errors
+                    end
+                  end
+                end
+                if menus[:dishes]
+                  menus[:dishes].each do |menu_items|
+                    menu_item = MenuItem.new(name: menu_items[:name], price: menu_items[:price], menu_id: menu.id)
+                    if menu_item.save
+                      @json << menu_item
+                    else
+                      @json << menu_item.errors
+                    end
+                  end
+                end
+              else
+                @json << menu.errors
+              end
+            end
+          end
+        else
+          @json << @restaurant.errors
+        end
+      end
+    end
+    if @json
+      render json: @json.to_json, status: :created, location: @restaurant
     end
   end
 
@@ -46,6 +84,7 @@ class RestaurantsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def restaurant_params
-      params.require(:restaurant).permit(:name)
+      #params.require(:restaurant).permit(:name)
+      params.permit(restaurants: [:name, menus: [:name, menu_items:[:name, :price], dishes:[:name, :price]]])
     end
 end
