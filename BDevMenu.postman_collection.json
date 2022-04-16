@@ -1,0 +1,273 @@
+{
+	"info": {
+		"_postman_id": "0abb0e62-1922-46bf-9c02-ecfd92de0c43",
+		"name": "BDevMenu",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "get menus",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/menus",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"menus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "set menus",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"menu\": {\n    \"name\": \"dinner\",\n    \"description\": \"Menu for dinner\",\n    \"restaurant_id\": 1\n}\n}\n"
+				},
+				"url": {
+					"raw": "http://localhost:3000/menus",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"menus"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get a menu",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/menus/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"menus",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "delete a menu",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/menus/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"menus",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update a menu",
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"menu\": {\n    \"description\": \"Menu for dinner(update)\"\n    \n        }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/menus/2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"menus",
+						"2"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get menu Items",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/menu_items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"menu_items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "set menu items",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\"menu_item\":{\n    \"name\":\"Burger\", \n    \"price\":9.0, \n    \"description\":\"bread, meat, cheese, lettuce and tomato.\" ,\n    \"menu_id\":2\n    }\n}"
+				},
+				"url": {
+					"raw": "http://localhost:3000/menu_items",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"menu_items"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get restaurants",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/restaurants",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"restaurants"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "set restaurant",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					},
+					{
+						"key": "content-type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"restaurants\": [\n      {\n        \"name\": \"Poppo's Cafe\",\n        \"menus\": [\n          {\n            \"name\": \"lunch\",\n            \"menu_items\": [\n              {\n                \"name\": \"Burger\",\n                \"price\": 9.00\n              },\n              {\n                \"name\": \"Small Salad\",\n                \"price\": 5.00\n              }\n            ]\n          },\n          {\n            \"name\": \"dinner\",\n            \"menu_items\": [\n              {\n                \"name\": \"Burger\",\n                \"price\": 15.00\n              },\n              {\n                \"name\": \"Large Salad\",\n                \"price\": 8.00\n              }\n            ]\n          }\n        ]\n      },\n      {\n        \"name\": \"Casa del Poppo\",\n        \"menus\": [\n          {\n            \"name\": \"lunch\",\n            \"dishes\": [\n              {\n                \"name\": \"Chicken Wings\",\n                \"price\": 9.00\n              },\n              {\n                \"name\": \"Burger\",\n                \"price\": 9.00\n              },\n              {\n                \"name\": \"Chicken Wings\",\n                \"price\": 9.00\n              }\n            ]\n          },\n          {\n            \"name\": \"dinner\",\n            \"dishes\": [\n              {\n                \"name\": \"Mega \\\"Burger\\\"\",\n                \"price\": 22.00\n              },\n              {\n                \"name\": \"Lobster Mac & Cheese\",\n                \"price\": 31.00\n              }\n            ]\n          }\n        ]\n      }\n    ]\n  }"
+				},
+				"url": {
+					"raw": "http://localhost:3000/restaurants",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"restaurants"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
